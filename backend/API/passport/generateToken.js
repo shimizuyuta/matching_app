@@ -4,7 +4,7 @@ dotenv.config();
 
 module.exports =   function(user){
   const payload = {
-    sub: user._id,
+    id: user._id,
     exp: Date.now() + parseInt(process.env.JWT_EXPIRES),
   };
 
