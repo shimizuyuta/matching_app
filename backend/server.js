@@ -1,18 +1,16 @@
 const express = require('express')
 const app = express();
-const mongoose = require("mongoose");
-const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const multer = require("multer");
 const router = require('./router')
 const cors = require('cors')
-const PORT = process.env.PORT || 3000
+require('dotenv').config();
+const PORT = process.env.API_PORT || 3000
 
-dotenv.config();
 app.disable('x-powered-by');
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 app.use(cors());
 //db_connection
@@ -22,6 +20,7 @@ initConnectionPool()
     console.log('mongo_data_connect_______________');
 })
 
+require("./API/passport/config")(app);
 app.use('/', router);
 
 app.listen(PORT,()=>console.log('backend server'))
