@@ -19,7 +19,6 @@ const Cards = (props) => {
   const ref = useRef(null);
   const [chipData,setChipData] = [
     {  label: "Angular", level: 1 },
-    {  label: "jQuery", level: 2 },
     {  label: "Polymer", level: 3 },
     {  label: "React", level: 2 },
     {  label: "Vue.js", level: 1 },
