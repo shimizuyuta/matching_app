@@ -17,6 +17,6 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "build": "react-scripts build"
+    "heroku-postbuild": "cd frontend && yarn install && yarn build"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "matching_app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:shimizuyuta/matching_app.git",
+  "author": "clean_water <shmizuyuta213@icloud.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon backend/server.js",
+    "heroku-postbuild": "cd frontend && yarn install && yarn run build"
+  }
+}
